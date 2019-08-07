@@ -170,7 +170,7 @@ Decrement the number by one.
 			Number:  number.Number,
 		}, "  ")
 	})
-	e.GET("/api/number/:id/incr", func(c echo.Context) error {
+	e.POST("/api/number/:id/incr", func(c echo.Context) error {
 		number, err := Find(c.Param("id"))
 		if err != nil {
 			return c.JSONPretty(http.StatusInternalServerError, Response{
@@ -192,7 +192,7 @@ Decrement the number by one.
 			Number:  number.Number,
 		}, "  ")
 	})
-	e.GET("/api/number/:id/decr", func(c echo.Context) error {
+	e.POST("/api/number/:id/decr", func(c echo.Context) error {
 		number, err := Find(c.Param("id"))
 		if err != nil {
 			return c.JSONPretty(http.StatusInternalServerError, Response{
